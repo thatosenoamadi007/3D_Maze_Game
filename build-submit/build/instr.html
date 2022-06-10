@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MAZE</title>
+  <meta charset="utf-8">
+		<title>WELCOME TO THE MAZE GAME</title>
+		<style>
+		body { 
+            margin: 0;
+            /*background-color:rgb(12, 226, 166);*/
+            background-image: url('./resources/paper1.png');
+            font-size: 2vw;
+            font-style: italic;
+            text-decoration-color: #80807e;
+       }
+       #back{
+          position: absolute;
+          top: 33%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #backbtn{
+          background-color: rgba(7, 6, 8, 0.5);
+          color: #80807e;
+          border-radius: 10px;
+          font-size: 3vw;
+          width:40%;
+          height:25%;
+        }
+        #backbtn:hover{
+          background-color: rgb(139, 109, 35);
+        }
+		</style>
+</head>
+<body>
+  <div style="position: relative;">
+    <p align = "center" style="color: aliceblue;">
+      MOVEMENT = A: left, S: down, D: right, W: up.
+      <br />USE SHIFT TO CHANGE MOVEMENT (WALK/RUN)
+      <br />LEFT CLICK MOUSE AND DRAG TO CHANGE CAMERA VIEW
+    </p>
+  </div>
+    
+    <div type="button" id="back">
+      <button id="backbtn" onclick="window.location.href='home.html'">BACK</button>
+    </div>
+  </div>
+  
+</body>
+</html>

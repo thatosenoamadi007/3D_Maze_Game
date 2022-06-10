@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Basic 3D Maze</title>
+  <meta charset="utf-8">
+		<title>WELCOME TO THE MAZE GAME</title>
+		<style>
+			body { 
+        margin: 0;
+        /*background-color:rgb(12, 226, 166);*/
+        background-image: url('./resources/paper1.png');
+       }
+
+        #level1{
+          position: absolute;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+        }
+        #level3{
+          position: absolute;
+          top: 61%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #level2{
+          position: absolute;
+          top: 43%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #level1btn{
+          background-color: rgba(7, 6, 8, 0.5);
+          color: #80807e;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #level1btn:hover{
+          background-color: rgb(139, 109, 35);
+        }
+
+        #level3btn{
+          background-color: rgba(7, 6, 8, 0.5);
+          color: #80807e;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #level3btn:hover{
+          background-color: rgb(139, 109, 35);
+        }
+
+        #level2btn{
+          background-color: rgba(7, 6, 8, 0.5);
+          color: #80807e;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #level2btn:hover{
+          background-color: rgb(139, 109, 35);
+        }
+
+        #htp{
+          position: absolute;
+          top: 83%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #htpbtn{
+          background-color: rgba(7, 6, 8, 0.5);
+          color: #80807e;
+          border-radius: 10px;
+          font-size: 3vw;
+          width:40%;
+          height:25%;
+        }
+        #htpbtn:hover{
+          background-color: rgb(139, 109, 35);
+        }
+		</style>
+</head>
+<body>
+  <p align = "center" style="color: aliceblue; font-size: 5vw; font-style: italic;">
+    WELCOME TO THE MAZE !!!!
+  </p>
+  <div id="body">
+    <div type="button" id="level1">
+      <button id="level1btn" onclick="window.location.href='game1.html'">LEVEL 1</button>
+    </div>
+    <div type="button" id="level2">
+      <button id="level2btn" onclick="window.location.href='game2.html'">LEVEL 2</button>
+    </div>
+    <div type="button" id="level3">
+      <button id="level3btn" onclick="window.location.href='game3.html'">LEVEL 3</button>
+    </div>
+    <div type="button" id="htp">
+      <button id="htpbtn" onclick="window.location.href='instr.html'">HOW TO PLAY</button>
+    </div>
+  </div>
+  
+</body>
+</html>

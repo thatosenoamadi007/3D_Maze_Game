@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>3D Maze</title>
+  <meta charset="utf-8">
+		<title>Maze Game</title>
+		<style>
+		body { 
+            margin: 0;
+            background-color:black;
+       }
+       #resumegamebody{
+        display: none;
+           visibility: hidden;
+       }
+       #startgamebody{
+           display: block;
+           visibility: visible;
+       }
+       #youlostbody{
+            display: none;
+            visibility: hidden;
+       }
+       #youwonbody{
+            display: none;
+           visibility: hidden;
+       }
+       /*Timer style*/
+      #timer {
+          position: absolute;
+          top: 0%;
+          width: 100%;
+          text-align: center;
+          z-index: 100;
+          display:block;
+          font-size: 4vw;
+          font-family: cursive;
+          color: rgba(0, 0, 0, 0);
+          text-transform: uppercase;
+          -webkit-text-stroke: 0.3vw #FFFFFF;
+        }
+        /*Before the game starts*/
+        #play{
+          position: absolute;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+        }
+        #back{
+          position: absolute;
+          top: 43%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #playbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #backbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        /*During the game shows the resume,restart and quit menu*/
+        #resume{
+          position: absolute;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+        }
+        #quit{
+          position: absolute;
+          top: 61%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #restart{
+          position: absolute;
+          top: 43%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #resumebtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #quitbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #restartbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        /*Game lost style menu*/
+        #restartlost{
+          position: absolute;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+        }
+        #quitlost{
+          position: absolute;
+          top: 43%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #restartlostbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #quitlostbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        /*Game won style menu*/
+        #restartwon{
+          position: absolute;
+          top: 25%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+        }
+        #quitwon{
+          position: absolute;
+          top: 61%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #nextgamewon{
+          position: absolute;
+          top: 43%;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          z-index: 100;
+          display:block;
+          margin-top: 2px;
+        }
+        #restartbtnwon{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #quitwonbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+        #nextgamewonbtn{
+          background-color: rgba(7, 1, 72, 0.5);
+          color: #606304;
+          border-radius: 10px;
+          font-size: 6vw;
+          width:40%;
+          height:25%;
+        }
+		</style>
+</head>
+<body>  
+  <!--Set timer to 00 : 00-->
+  <div id="timer">00 : 00</div>
+
+  <!--Before game start, start game or quit game-->
+  <div id="startgamebody">
+    <div type="button" id="play">
+      <button id="playbtn">PLAY GAME</button>
+    </div>
+    <div type="button" id="back">
+      <button id="backbtn" onclick="window.location.href='home.html'">QUIT</button>
+    </div>
+  </div>
+
+  <!--During the game, resume game or restart game or quit game-->
+  <div id="resumegamebody">
+    <div type="button" id="resume">
+      <button id="resumebtn">RESUME</button>
+    </div>
+    <div type="button" id="restart">
+      <button id="restartbtn" onclick="window.location.href='game2.html'">RESTART</button>
+    </div>
+    <div type="button" id="quit">
+      <button id="quitbtn" onclick="window.location.href='home.html'">QUIT</button>
+    </div>
+  </div>
+
+  <!--Game Over You lost, restart game or quit game-->
+  <div id="youlostbody">
+    <div type="button" id="restartlost">
+      <button id="restartlostbtn" onclick="window.location.href='game2.html'">RESTART</button>
+    </div>
+    <div type="button" id="quitlost">
+      <button id="quitlostbtn" onclick="window.location.href='home.html'">QUIT</button>
+    </div>
+  </div>
+
+  <!--Game Over You won, restart game or quit game or play next level-->
+  <div id="youwonbody">
+    <div type="button" id="restartwon">
+      <button id="restartbtnwon" onclick="window.location.href='game2.html'">RESTART</button>
+    </div>
+    <div type="button" id="nextgamewon">
+      <button id="nextgamewonbtn" onclick="window.location.href='game3.html'">NEXT LEVEL</button>
+    </div>
+    <div type="button" id="quitwon">
+      <button id="quitwonbtn" onclick="window.location.href='home.html'">QUIT</button>
+    </div>
+  </div>
+  <!-- Loaded scene -->
+  <script src="./main_game_2.js" type="module">
+  </script>
+</body>
+</html>
